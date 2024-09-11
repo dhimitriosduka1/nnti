@@ -1,45 +1,37 @@
-# NNTI Project WS 2023/2024
+# Neural Networks: Theory and Implementation - Term Project
 
-## About
+This repository contains the implementation of the term project for the course **Neural Networks: Theory and Implementation**. It was implemented by [**Dhimitrios Duka**](dhimitrios.duka1@gmail.com) and [**Kai Wittenmayer**](kawi00002@uni-saarland.de). The project focuses on fine-tuning multilingual language models (LLMs) using parameter-efficient tuning (PEFT) methods like **BitFit**, **LoRA**, and **IA3**. The project evaluates the performance of these techniques on underrepresented languages, particularly **quy_Latn** (Quechua).
 
-See [tasks](./tasks) to get started.
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Datasets](#datasets)
+- [Results](#results)
+- [References](#references)
 
-# Notes
+## Project Overview
+The goal of this project is to explore and compare various fine-tuning techniques for adapting multilingual language models to low-resource languages. Specifically, we aim to enhance the performance of models such as **XGLM-564M** and **GPT-2** in non-dominant languages, with a focus on **quy_Latn**. The fine-tuning methods analyzed include full fine-tuning and parameter-efficient approaches like **BitFit**, **LoRA**, and **IA3**.
 
-## Code Submission
+## Datasets
+The following datasets were used for training and evaluation:
+- **NLLB** (No Language Left Behind): A dataset with diverse multilingual content.
+- **Spanish-to-Quechua**: A dataset for translating Spanish to the underrepresented Quechua language.
 
-You don't necessarily need to complete the code in this Jupyter Notebook, you are free to use another notebook or a python script file, as you would like. You are expected to submit the code by **15.03.2023**.
+Additional datasets such as **OSCAR** and **CC100** were evaluated but filtered due to quality and length concerns.
 
-Your code should be clean and well commented. We also expect that if we decide to run it on our system, it should be straighforward to do so. We recommend creating a ```requirements.txt``` file with the names of all the libraries with their versions. If applicable, please mention the python version in a ```README.md``` file, which should also include instructions on how to run your code.
+## Results
+The performance of the models was measured using language modeling loss. Notably, full fine-tuning showed the best results with a **30.4% improvement** in loss for **quy_Latn**, while **BitFit**, **LoRA**, and **IA3** offered competitive results with far fewer parameter updates. Below is a comparison of losses:
 
-As mentioned for the assignments, always remember to cite the code with the links as comments, if you decide to use it from a public repository.
+| Method        | Loss on quy_Latn |
+| ------------- |:----------------:|
+| Full Fine-Tuning | 4.90 |
+| BitFit         | 5.22 |
+| LoRA           | 5.23 |
+| IA3            | 5.22 |
 
-## Report Submission
+The fine-tuned models were visualized using **PCA** and **t-SNE** to explore multilingual representation spaces.
 
-With the code, you are also expected to submit a report with a maximum of 4 pages. You should write your report in LaTeX using this template for ACL 2023 [Overleaf Link](https://www.overleaf.com/latex/templates/acl-2023-proceedings-template/qjdgcrdwcnwp). Use this document to fill in any missing information that are not necessarily covered during your presentation for the sake of time in the presentation. While writing your report, we would highly encourgae you to cite the papers behind each tool / library / function that you might use for your experiments. Here is the documention on how to write equations in LaTeX [here](https://www.overleaf.com/learn/latex/Mathematical_expressions).
-
-You art also expected to submit this report with your code. You should provide the **.tex, .pdf and all image files** zipped with the same naming convention as it was in your assignment(s).
-
-## Presentation
-
-On 19.03, 21.03 and 22.03 each team will present their work for 15 minutes. We expect equal contribution from each member in delivery and content of the presentation. So roughly 5 minutes for one person, if you have 3 people in your team. There will be 5 minutes for Q&A. At-least one person from your team should be present to do an in-person presentation, rest of your team could join remotely, if they are not present.
-
-## Important Dates
-
- - Code & Report Submission: 15.03.2023 (23.59)
- - Presentations: 19.03.2023, 21.03.2023, 22.03.2023
- 
- You'll get a precise date and time for your team's presentation at a later time.
-
-### Grading
-
-In this project, your final grades will be determined as follows:
-
- - **30%**: &emsp; Completing all the tasks
- - **30%**: &emsp; Provide comprehensive analyses and justifications for all decisions, supported by robust scientific evidence, including relevant experiments and/or citations from scholarly papers.
- - **20%**: &emsp; Quality of the content of the presentation
- - **20%**: &emsp; Delivery of the presentation
-
- ## Things we need to further disscuss either on the presentation or paper
- - Compare the language modeling loss of XGLM and GPT2. What do you observe? Investigate the differences in tokenization for XGLM and GPT2. What do you observe? How can the good (or bad) performance of GPT2 be explained?
- - Apply PCA to the hidden representations of each language from the first layer of the model and visualize the result in 2D. Repeat the same with tSNE and compare to the results you got with PCA. Discuss what you observe. 
+## References
+- [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)
+- [BitFit: Simple Parameter-Efficient Fine-Tuning](https://arxiv.org/abs/2106.10199)
+- [IA3: Parameter-Efficient Tuning](https://arxiv.org/abs/2205.05638)
+- [NLLB: No Language Left Behind](https://arxiv.org/abs/2207.04672)
