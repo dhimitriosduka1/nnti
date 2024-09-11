@@ -1,0 +1,25 @@
+ipywidgets
+jupyter
+numpy
+matplotlib
+torch
+sentencepiece
+protobuf
+datasets
+transformers
+diffusers
+peft
+h5py
+scikit-learn
+wandb
+
+# Task 2
+altair_viewer
+vegafusion[embed]>=1.4.0
+altair_saver
+
+# Task 3
+apache-beam
+mwparserfromhell
+evaluate
+metric

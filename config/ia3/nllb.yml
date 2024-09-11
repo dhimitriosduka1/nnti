@@ -1,0 +1,15 @@
+method: ia3
+wandb_project: XGLM-564M-IA3-Finetuning
+per_device_train_batch_size: 2
+per_device_eval_batch_size: 2
+epochs: 5
+learning_rate: 0.00005
+
+dataset:
+  train:
+    path: allenai/nllb
+    name: eng_Latn-quy_Latn
+    split: train
+
+tokenizer:
+  max_length: 512

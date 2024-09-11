@@ -1,0 +1,1 @@
+python $PROJECT_ROOT/scripts/task_3.py $PROJECT_ROOT/config/full/spanish-to-quechua.yml

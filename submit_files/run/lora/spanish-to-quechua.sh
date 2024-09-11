@@ -1,0 +1,1 @@
+python $PROJECT_ROOT/scripts/task_3.py $PROJECT_ROOT/config/lora/spanish-to-quechua.yml
